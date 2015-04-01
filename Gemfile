@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+# geoJSON converters
+gem 'rgeo', '~> 0.3.20'
+gem 'rgeo-geojson', '~> 0.3.1'
+gem 'geocoder'
+
 gem 'rest-client', '~> 1.8.0'
 
 gem 'nokogiri', '~> 1.6.6.2'
