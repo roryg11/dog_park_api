@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'dog_parks#index'
+  get '/geojson' => 'dog_parks#geojson', as: 'geojson' 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
