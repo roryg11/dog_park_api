@@ -10,21 +10,29 @@ class DogParksController < ApplicationController
 
     @parks.each do |park|
       @parks_geojson << {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [park.longitude, park.latitude]
+        :"type"=> 'Feature',
+        :"geometry"=> {
+          :"type"=> 'Point',
+          :"coordinates"=> ["#{park.longitude}", "#{park.latitude}"]
         },
-        properties: {
-          name: park.name,
-          address: park.address,
-          description: park.description,
-          :'marker-color' => '#00607d',
-          :'marker-symbol' => 'circle',
-          :'marker-size' => 'medium',
+        :"properties"=> {
+          :"name"=> park.name,
+          :"address"=> park.address,
+          :"description"=> park.description,
+          :'marker-color'=> '#00607d',
+          :'marker-symbol'=> 'circle',
+          :'marker-size'=> 'medium',
         }
       }
     end
-    render json: @parks_geojson
+
+    @geojson=[{
+      :"type"=> "FeatureCollection",
+      :"features"=> @parks_geojson
+      }]
+    render json: @geojson
+  end
+
+  def map
   end
 end
