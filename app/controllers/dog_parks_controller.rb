@@ -16,7 +16,7 @@ class DogParksController < ApplicationController
           :"coordinates"=> ["#{park.longitude}", "#{park.latitude}"]
         },
         :"properties"=> {
-          :"name"=> park.name,
+          :"title"=> park.name,
           :"address"=> park.address,
           :"description"=> park.description,
           :'marker-color'=> '#00607d',
