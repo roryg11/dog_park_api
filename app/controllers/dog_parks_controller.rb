@@ -13,7 +13,7 @@ class DogParksController < ApplicationController
         :"type"=> 'Feature',
         :"geometry"=> {
           :"type"=> 'Point',
-          :"coordinates"=> ["#{park.longitude}", "#{park.latitude}"]
+          :"coordinates"=> [park.longitude, park.latitude]
         },
         :"properties"=> {
           :"title"=> park.name,
